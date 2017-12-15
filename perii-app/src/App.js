@@ -1,19 +1,28 @@
+/* Node elements */
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+/* React Router elements */
+import { BrowserRouter, Route } from 'react-router-dom';
+
+/* Pages */
+import Home from './pages/home/Home';
+import Contact from './pages/contact/Contact';
+import Docs from './pages/docs/Docs';
+
+/* Others resources */
 
 
-
-import Home from './pages/Home/Home';
-import Nav from './components/header/Nav';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <Route path="/" component={Home} />
-      </Router>
+      <BrowserRouter>
+        <div>
+          <Route exact path="/" component={Home} />
+          <Route path="/docs" component={Docs} />
+          <Route path="/contact" component={Contact} />
+        </div>
+      </BrowserRouter>
     );
   }
 }

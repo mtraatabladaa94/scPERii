@@ -7,15 +7,14 @@ import Footer from '../../components/footer/Footer';
 import AsideContentLeft from '../../components/body/asideLeft/AsideContentLeft';
 
 /* CSS */
-import './Home.css';
 
-class Home extends Component {
-    
+
+class Docs extends Component {
+
     render() {
-
         return (
-
-            <section className="home-page">
+            
+            <section className="docs-page">
 
                 <Nav />
 
@@ -26,6 +25,9 @@ class Home extends Component {
                                 <AsideContentLeft />
                             </div>
                         </aside>
+                        <section className="wrap-content col l10 m8 s12">
+                            <h1>Docs</h1>
+                        </section>
                     </section>
                 </section>
 
@@ -34,9 +36,8 @@ class Home extends Component {
             </section>
 
         );
-
     }
 
 }
 
-export default Home;
+export default Docs;

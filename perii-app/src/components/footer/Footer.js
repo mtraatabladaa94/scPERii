@@ -7,7 +7,7 @@ function Footer() {
     return (
         <footer className="footer-content blue-grey darken-1">
             <section className="footer-link">
-                <div className="container">
+                <div className="container-fluid">
                     <div className="row">
                         <section className="col s12 m9">
                             <section className="about-section">
@@ -30,14 +30,11 @@ function Footer() {
                                 Redes Sociales
                             </h4>
                             <div className="center">
-                                <a href="#">
-                                    <img src="~/Images/facebook.png" />
+                                <a href="https://www.facebook.com/">
+                                    <img src={process.env.PUBLIC_URL + '/Resources/Images/fb.png'} />
                                 </a>
-                                <a href="#">
-                                    <img src="~/Images/twitter.png" />
-                                </a>
-                                <a href="#">
-                                    <img src="~/Images/instagram.png" />
+                                <a href="https://twitter.com/">
+                                    <img src={process.env.PUBLIC_URL + '/Resources/Images/tw.png'} />
                                 </a>
                             </div>
                         </section>
@@ -45,7 +42,7 @@ function Footer() {
                 </div>
             </section>
             <section className="footer-copyright blue-grey darken-3">
-                <div className="container">
+                <div className="container-fluid">
                     <div className="row">
                         <div className="col s12 rights">
                             <section className="developed-by-section">

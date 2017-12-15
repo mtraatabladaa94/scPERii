@@ -18,16 +18,16 @@ function Nav(props) {
                             <a href="#" data-activates="mobile" className="custom-button-collapse button-collapse btn btn-flat">
                                 <i className="material-icons">menu</i>
                             </a>
-                            <ul className="right">
+                            <ul className="right hide-on-med-and-down">
                                 <li><Link className="mnu-primary grey-text text-darken-1" to="/">Inicio</Link></li>
-                                <li><Link className="mnu-primary grey-text text-darken-1" to="/">Docs</Link></li>
-                                <li><Link className="mnu-primary grey-text text-darken-1" to="/">Contáctenos</Link></li>
+                                <li><Link className="mnu-primary grey-text text-darken-1" to="/docs">Docs</Link></li>
+                                <li><Link className="mnu-primary grey-text text-darken-1" to="/contact">Contáctenos</Link></li>
                                 <li><Link to="" className="modal-start-free waves-effect waves-light btn red darken-4 custom-btn-text">Iniciar Sesión</Link></li>
                             </ul>
                             <ul className="side-nav" id="mobile">
                                 <li><Link className="mnu-primary grey-text text-darken-1" to="/">Inicio</Link></li>
-                                <li><Link className="mnu-primary grey-text text-darken-1" to="/">Docs</Link></li>
-                                <li><Link className="mnu-primary grey-text text-darken-1" to="/">Contáctenos</Link></li>
+                                <li><Link className="mnu-primary grey-text text-darken-1" to="/docs">Docs</Link></li>
+                                <li><Link className="mnu-primary grey-text text-darken-1" to="/contact">Contáctenos</Link></li>
                                 <li><Link to="/" className="modal-start-free waves-effect waves-light btn red custom-btn-text">Iniciar Sesión</Link></li>
                             </ul>
                         </div>

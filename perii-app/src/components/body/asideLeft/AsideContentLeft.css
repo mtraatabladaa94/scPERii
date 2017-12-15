@@ -6,6 +6,7 @@
 .aside-content-left.collection .collection-item {
     padding-left: 24px;
     padding-right: 24px;
+    padding-top: 16px;
     border:none;
 }
 .aside-content-left.collection .collection-item.active, .aside-content-left.collection .collection-item.active a {
