@@ -5,7 +5,7 @@ import './Header.css';
 class Header extends Component {
 
     /* Construcción */
-    /*constructor(props) {
+    constructor(props) {
         super(props);
     }
 
@@ -13,18 +13,16 @@ class Header extends Component {
     }
 
     componentDidMount() {
-    }*/
+    }
 
     render() {
         return (
-            <p>
-                Hola
-            </p>
+            <Nav />
         );
     }
 
     /* Actualización */
-    /*componentWillReceiveProps() {
+    componentWillReceiveProps() {
     }
 
     componentWillUpdate() {
@@ -34,11 +32,11 @@ class Header extends Component {
     }
 
     componentDidUpdate() {
-    }*/
+    }
 
     /* Eliminación */
-    /*componentWillUnmount() {
-    }*/
+    componentWillUnmount() {
+    }
 
 }
 

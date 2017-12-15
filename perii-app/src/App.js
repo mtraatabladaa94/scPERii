@@ -4,7 +4,7 @@ import './App.css';
 
 
 
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Nav from './components/header/Nav';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 

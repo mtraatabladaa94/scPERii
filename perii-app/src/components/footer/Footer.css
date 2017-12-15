@@ -16,6 +16,12 @@
     padding-top:10px;
     padding-bottom:10px;
 }
+.footer-content .about-section, .footer-content .copyright-section {
+    margin-left:12px;
+}
+.footer-content .developed-by-section {
+    margin-right: 12px;
+}
     .footer-content .footer-copyright a {
         font-weight: bold;
     }

@@ -1,0 +1,33 @@
+.aside-content-left.collection {
+    margin: 0;
+    border: none;
+    border-radius: 0px!important;
+}
+.aside-content-left.collection .collection-item {
+    padding-left: 24px;
+    padding-right: 24px;
+    border:none;
+}
+.aside-content-left.collection .collection-item.active, .aside-content-left.collection .collection-item.active a {
+    background-color: #36a0e1;
+    color: #FFFFFF;
+}
+.aside-content-left.collection .collection-item.separator {
+    border-bottom: 1px solid #e0e0e0;
+}
+.aside-content-left.collection .collection-item .title {
+    color: #2b313f;
+}
+.aside-content-left.collection .collection-item .title span {
+    display: inline-block;
+    position: absolute;
+    line-height: 24px;
+}
+.aside-content-left.collection .collection-item .title .material-icons, .aside-content-left.collection .collection-item .title a .material-icons {
+    margin-right: 5px;
+}
+.aside-content-left.collection .collection-item .secondary-content {
+    color: #b7bbc4;
+    line-height: 24px;
+    height: 24px;
+}
