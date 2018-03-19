@@ -8,7 +8,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Contact from './pages/contact/Contact';
 import Docs from './pages/docs/Docs';
-import Theme from './components/theme/Theme';
+import TrainingList from './pages/training/TrainingsList';
 
 /* Others resources */
 
@@ -20,7 +20,7 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/docs' component={Docs} />
           <Route path='/contact' component={Contact} />
-          <Route path='/sitioPrueba' component={Theme} />
+          <Route path='/training/list' component={TrainingList} />
         </div>
       </BrowserRouter>
     );

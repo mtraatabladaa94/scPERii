@@ -78,23 +78,23 @@ export const drawerWidth = 240;
 
 const styles = theme => ({
     drawerPaper: {
-        position: 'relative',
-        width: drawerWidth,
-        transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
+      position: 'relative',
+      width: drawerWidth,
+      transition: theme.transitions.create('width', {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
     },
     drawerPaperClose: {
-        overflowX: 'hidden',
-        transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        width: theme.spacing.unit * 7,
-        [theme.breakpoints.up('sm')]: {
-            width: theme.spacing.unit * 9,
-        },
+      overflowX: 'hidden',
+      transition: theme.transitions.create('width', {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
+      width: theme.spacing.unit * 7,
+      [theme.breakpoints.up('sm')]: {
+        width: theme.spacing.unit * 9,
+      },
     },
     toolbar: {
         display: 'flex',
@@ -105,26 +105,25 @@ const styles = theme => ({
     },
 });
 
-export const MyDrawer = ({ classes, theme, open, onDrawerClose }) => {(
-        <Drawer
-            variant="permanent"
-            classes={{
-                paper: classNames(classes.drawerPaper, !open && classes.drawerPaperClose),
-            }}
-            open={this.state.open}
-        >
-            <div className={classes.toolbar}>
-                <IconButton onClick={this.onDrawerClose}>
-                {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                </IconButton>
-            </div>
-            <Divider />
-            <List>{mailFolderListItems}</List>
-            <Divider />
-            <List>{otherMailFolderListItems}</List>
-        </Drawer>
-    );
-}
+export const MyDrawer = ({ classes, theme, open, onDrawerClose }) => (
+  <Drawer
+    variant="permanent"
+    classes={{
+      paper: classNames(classes.drawerPaper, !open && classes.drawerPaperClose),
+    }}
+    open={open}
+  >
+      <div className={classes.toolbar}>
+          <IconButton onClick={onDrawerClose}>
+            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          </IconButton>
+      </div>
+      <Divider />
+      <List>{mailFolderListItems}</List>
+      <Divider />
+      <List>{otherMailFolderListItems}</List>
+  </Drawer>
+);
   
 MyDrawer.propTypes = {
     classes: PropTypes.object.isRequired,

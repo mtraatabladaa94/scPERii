@@ -1,16 +1,18 @@
 /* Imports Node & ReactJS Elements */
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 
 /* Custom Elements */
 import MyAppBar from "./MyAppBar";
 import MyDrawer from "./MyDrawer";
+import BasicDataTable from './../dataTable/SimpleDataTable';
 
-const styles = {
+const styles = theme => ({
     root: {
         flexGrow: 1,
-        height: 430,
+        minHeight: '100%',
+        height: 'auto',
         zIndex: 1,
         overflow: 'hidden',
         position: 'relative',
@@ -28,12 +30,14 @@ const styles = {
         backgroundColor: theme.palette.background.default,
         padding: theme.spacing.unit * 3,
     },
-};
+});
 
 export class Theme extends Component {
 
     static propTypes = {
+        classes: PropTypes.object.isRequired,
         title: PropTypes.string.isRequired,
+        children: PropTypes.element.isRequired,
     }
 
     state = {
@@ -50,7 +54,7 @@ export class Theme extends Component {
 
     render() {
 
-        const { classes } = this.props;
+        const { classes, children } = this.props;
 
         return (
 
@@ -69,7 +73,7 @@ export class Theme extends Component {
 
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
-                    <Typography noWrap>{'You think water moves fast? You should see ice.'}</Typography>
+                    {children}
                 </main>
 
             </div>

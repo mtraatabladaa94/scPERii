@@ -40,7 +40,7 @@ const styles = theme => ({
     },
 });
 
-export const MyAppBar = ({ title, classes, open }) => (
+export const MyAppBar = ({ title, classes, open, onDrawerOpen }) => (
     <AppBar
         position="absolute"
         className={classNames(classes.appBar, open && classes.appBarShift)}
@@ -49,7 +49,7 @@ export const MyAppBar = ({ title, classes, open }) => (
             <IconButton
                 color="inherit"
                 aria-label="open drawer"
-                onClick={this.onDrawerOpen}
+                onClick={onDrawerOpen}
                 className={classNames(classes.menuButton, open && classes.hide)}
             >
                 <MenuIcon />
