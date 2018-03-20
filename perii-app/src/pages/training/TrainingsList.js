@@ -2,10 +2,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
+import Button from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
 
 /* Imports Custom Elements */
 import Theme from './../../components/theme/Theme';
 import BasicDataTable from "./../../components/dataTable/SimpleDataTable";
+import BasicModal from './../../components/modal/BasicModal';
 
 const columnData = [
     { id: 'name', numeric: false, disablePadding: true, label: 'Dessert (100g serving)' },
@@ -41,10 +44,40 @@ export class TrainingList extends Component {
         
     }
 
+    state = {
+        addFormOpen: false,
+    };
+  
+    handleAddFormOpen = () => {
+        this.setState({ addFormOpen: true });
+        console.log('MICHEL ERROR');
+    };
+  
+    handleAddFormClose = () => {
+        this.setState({ addFormOpen: false });
+    };
+
     handleTableDelete = () => {
     }
 
     render() {
+
+        const dialogActions = (
+            <Button onClick={this.handleAddFormClose} color="primary">
+                Subscribe
+            </Button>
+        );
+        const dialogContent = (
+            <TextField
+                autoFocus
+                margin="dense"
+                id="name"
+                label="Email Address"
+                type="email"
+                fullWidth
+            />
+        );
+
         return (
 
             <Theme title={'Capacitaciones'}>
@@ -54,10 +87,20 @@ export class TrainingList extends Component {
                     orderByDefault={'calories'}
                     columns={columnData}
                     onDelete={this.handleTableDelete}
+                    onFilter={this.handleAddFormOpen}
+                />
+                <BasicModal
+                    title={'Suscribirse'}
+                    open={this.state.addFormOpen}
+                    text={'To subscribe to this website, please enter your email address here. We will send updates occationally.'}
+                    dialogActions={dialogActions}
+                    dialogContent={dialogContent}
+                    onClose={this.handleAddFormClose}
                 />
             </Theme>
             
         )
+
     }
 
 }

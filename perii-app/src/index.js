@@ -9,11 +9,6 @@ import { store } from './state/store/index';
 import './index.css';
 import App from './App';
 
-/* Materialize CSS & JQuery */
-import 'materialize-css/dist/css/materialize.min.css';
-import $ from 'jquery';
-import 'materialize-css/dist/js/materialize';
-
 import registerServiceWorker from './registerServiceWorker';
 
 /* Initialize App Firebase */
@@ -33,9 +28,5 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
-
-$(document).ready(function() {
-    $(".button-collapse").sideNav();
-});
 
 registerServiceWorker();

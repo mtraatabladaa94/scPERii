@@ -109,7 +109,7 @@ const toolbarStyles = theme => ({
 
 let EnhancedTableToolbar = props => {
 
-    const { numSelected, classes, title, actions, onDelete } = props;
+    const { numSelected, classes, title, actions, onDelete, onFilter } = props;
 
     return (
         <Toolbar
@@ -132,14 +132,20 @@ let EnhancedTableToolbar = props => {
             <div className={classes.actions}>
                 {numSelected > 0 ? (
                     <Tooltip title="Eliminar">
-                        <IconButton onClick={onDelete} aria-label="Eliminar">
+                        <IconButton
+                            onClick={onDelete}
+                            aria-label="Eliminar"
+                        >
                             <DeleteIcon />
                         </IconButton>
                     </Tooltip>
                 ) : (
                     <div>
                         <Tooltip title="Filtrar">
-                            <IconButton aria-label="Filtrar">
+                            <IconButton
+                                aria-label="Filtrar"
+                                onClick={onFilter}
+                            >
                                 <FilterListIcon />
                             </IconButton>
                         </Tooltip>
@@ -157,6 +163,8 @@ EnhancedTableToolbar.propTypes = {
     classes: PropTypes.object.isRequired,
     numSelected: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    onDelete: PropTypes.func,
+    onFilter: PropTypes.func,
 };
 
 EnhancedTableToolbar = withStyles(toolbarStyles)(EnhancedTableToolbar);
@@ -251,7 +259,7 @@ class BasicDataTable extends Component {
     isSelected = id => this.state.selected.indexOf(id) !== -1;
 
     render() {
-        const { classes, title, columns, actions, onDelete } = this.props;
+        const { classes, title, columns, actions, onDelete, onFilter } = this.props;
         const { data, order, orderBy, selected, rowsPerPage, page } = this.state;
         const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
 
@@ -263,6 +271,7 @@ class BasicDataTable extends Component {
                     numSelected={selected.length}
                     actions={actions}
                     onDelete={onDelete}
+                    onFilter={onFilter}
                 />
 
                 <div className={classes.tableWrapper}>
@@ -347,7 +356,8 @@ BasicDataTable.propTypes = {
     data: PropTypes.object.isRequired,
     orderByDefault: PropTypes.string.isRequired,
     actions: PropTypes.element,
-    onDelete: PropTypes.func.isRequired,
+    onDelete: PropTypes.func,
+    onFilter: PropTypes.func,
 };
 
 export default withStyles(styles)(BasicDataTable);
