@@ -8,11 +8,17 @@ import Dialog, {
     DialogContentText,
     DialogTitle,
 } from 'material-ui/Dialog';
+import Slide from 'material-ui/transitions/Slide';
+
+const Transition = (props) => {
+    return <Slide direction="up" {...props} />;
+}
 
 export const BasicModal = ({ title, text, dialogActions, dialogContent, open, onClose }) => (
     <Dialog
         open={open}
         onClose={onClose}
+        transition={Transition}
         aria-labelledby="form-dialog-title"
     >
         <DialogTitle id="form-dialog-title">{title}</DialogTitle>
