@@ -10,7 +10,7 @@ import { Field, reduxForm } from 'redux-form';
 import BasicModal from './../../components/modal/BasicModal';
 import BasicTextInput from './../formControls/BasicTextInput';
 
-let TrainingActions = ({ onClick }) => (
+export let TrainingActions = ({ onClick }) => (
     <Button onClick={onClick} color="primary">
         Guardar
     </Button>
@@ -27,14 +27,19 @@ const styles = {
     },
 };
 
-let TrainingContent = ({ classes }) => (
-    <form>
+const handleSubmit = (values) => {
+    console.log('MICHEL PRUEBA:');
+    console.log(values);
+};
+
+export let TrainingContent = ({ classes }) => (
+    <form onSubmit={this.handleSubmit}>
         <Grid container className={ classes.root }>
             <Grid item xs={12}>
                 <Field
                     id='userInput'
                     name='userInput'
-                    label='Solicitante'
+                    label={'Solicitante de la Capacitación'}
                     component={BasicTextInput}
                 />
             </Grid>
@@ -85,18 +90,18 @@ let TrainingContent = ({ classes }) => (
                     component={BasicTextInput}
                 />
             </Grid>
-
         </Grid>
     </form>
 );
 
 TrainingContent.propTypes = {
     classes: PropTypes.object.isRequired,
+    userInput: PropTypes.string,
 };
 
-TrainingContent = withStyles(styles)(TrainingContent);
+TrainingContent = reduxForm({ form: 'trainingEdit' })(TrainingContent);
 
-TrainingContent = reduxForm({ form: 'trainingEdit'})(TrainingContent);
+TrainingContent = withStyles(styles)(TrainingContent);
 
 export const TrainingEdit = ({open, onClose}) => (
     <BasicModal

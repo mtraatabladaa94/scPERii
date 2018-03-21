@@ -18,9 +18,7 @@ class Home extends Component {
     }
     
     render() {
-
-        this.props.setRequestsByUser();
-
+        
         return (
 
             <section className="home-page">

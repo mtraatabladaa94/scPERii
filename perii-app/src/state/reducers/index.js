@@ -6,7 +6,7 @@ import { reducer as formReducer } from 'redux-form';
 import { requestsByUser } from "./requests/requestsByUser";
 
 /* Export Combine Reducers */
-export const reducers = combineReducers({
+export const rootReducer = combineReducers({
     requestsByUser,
-    forms: formReducer,
+    form: formReducer,
 });

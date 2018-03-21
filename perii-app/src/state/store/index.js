@@ -1,19 +1,18 @@
 /* Import Redux Components */
 import { createStore, applyMiddleware, compose } from "redux";
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 /* Import Reducers */
-import { reducers } from "../reducers/index";
+import { rootReducer } from "../reducers/index";
 
 /* Object with Initial State */
 const initialState = {
 };
 
-/* Const for Tools of Redux Chrome Plugin */
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__  || compose;
-
 /* Export and Create Store */
 export const store = createStore(
-    reducers,
-    composeEnhancers(applyMiddleware(thunk))
+    rootReducer,
+    initialState,
+    composeWithDevTools(applyMiddleware(thunk)),
 );

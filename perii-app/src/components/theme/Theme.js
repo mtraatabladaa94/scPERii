@@ -37,7 +37,7 @@ export class Theme extends Component {
     static propTypes = {
         classes: PropTypes.object.isRequired,
         title: PropTypes.string.isRequired,
-        children: PropTypes.element.isRequired,
+        children: PropTypes.array.isRequired,
     }
 
     state = {

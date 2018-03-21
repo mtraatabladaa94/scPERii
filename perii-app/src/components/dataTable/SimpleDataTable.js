@@ -290,12 +290,12 @@ class BasicDataTable extends Component {
                                 const isSelected = this.isSelected(n.id);
                                 return (
                                     <TableRow
+                                        key={n.id}
                                         hover
                                         onClick={event => this.handleClick(event, n.id)}
                                         role="checkbox"
                                         aria-checked={isSelected}
                                         tabIndex={-1}
-                                        key={n.id}
                                         selected={isSelected}
                                     >
                                         <TableCell padding="checkbox">
@@ -306,6 +306,7 @@ class BasicDataTable extends Component {
                                                 column => {
                                                     return (
                                                         <TableCell
+                                                            key={column.id}
                                                             numeric={column.numeric}
                                                             padding={column.disablePadding ? 'none' : 'default'}
                                                         >
@@ -353,7 +354,7 @@ class BasicDataTable extends Component {
 BasicDataTable.propTypes = {
     classes: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
-    data: PropTypes.object.isRequired,
+    data: PropTypes.array.isRequired,
     orderByDefault: PropTypes.string.isRequired,
     actions: PropTypes.element,
     onDelete: PropTypes.func,
