@@ -11,31 +11,35 @@ const styles = theme => ({
     },
 });
 
-export const BasicTextInput = ({ classes, id, type, label, input, meta }) => (
+export const BasicTextInput = ({ classes, id, type, label, input, meta, shrink }) => {
 
-    <FormControl
-        className={classes.formControl}
-        fullWidth
-        error={ meta.touched && meta.error ? true : false }
-    >
+    const shrinkProp = shrink ? ({ 'shrink' : shrink }) : null;
 
-        <InputLabel
-            htmlFor={ id }
+    return (
+        <FormControl
+            className={classes.formControl}
+            fullWidth
+            error={ meta.touched && meta.error ? true : false }
         >
-            {label}
-        </InputLabel>
 
-        <Input
-            id={id}
-            {...input}
-            type={ type ? type : 'text' }
-        />
+            <InputLabel
+                htmlFor={ id }
+                { ...shrinkProp }
+            >
+                { label }
+            </InputLabel>
 
-        { meta.touched && meta.error ? <FormHelperText>{meta.error}</FormHelperText> : null }
+            <Input
+                id={ id }
+                { ...input }
+                type={ type ? type : 'text' }
+            />
 
-    </FormControl>
+            { meta.touched && meta.error ? <FormHelperText>{meta.error}</FormHelperText> : null }
 
-);
+        </FormControl>
+    );
+}
 
 BasicTextInput.propTypes = {
     id: PropTypes.string.isRequired,
@@ -43,6 +47,7 @@ BasicTextInput.propTypes = {
     label: PropTypes.string.isRequired,
     input: PropTypes.object,
     meta: PropTypes.object,
+    shrink: PropTypes.bool,
 };
 
 export default withStyles(styles, { withTheme: true })(BasicTextInput);

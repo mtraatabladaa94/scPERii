@@ -57,13 +57,16 @@ export class TrainingList extends Component {
     };
 
     handleTrainingEditSave = () => {
-
     };
 
     handleTrainingDelete = () => {
     }
 
     render() {
+
+        const training = {
+            dateInput: '2018-12-01',
+        };
 
         return (
 
@@ -80,6 +83,7 @@ export class TrainingList extends Component {
                     open={this.state.trainingEditOpen}
                     onClose={this.handleTrainingEditClose}
                     onSave={this.handleTrainingEditSave}
+                    {...training}
                 />
             </Theme>
             
